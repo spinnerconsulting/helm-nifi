@@ -9,7 +9,7 @@ describe('NiFi Login via OIDC', () => {
         browser = await puppeteer.connect({
           browserWSEndpoint: 'ws://'+process.env.K8SNODEIP+':'+process.env.K8SPORT,
           ignoreHTTPSErrors: true,
-	  args:['--ignore-certificate-errors']
+	  acceptInsecureCerts: true
         })
         page = await browser.newPage()
     })
