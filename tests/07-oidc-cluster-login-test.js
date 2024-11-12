@@ -65,6 +65,7 @@ describe('NiFi Login via OIDC', () => {
             if ( messageContent != "") {
                 console.log("        Message Content: "+messageContent+" ( try "+i.toString()+")")
             }
+	    await new Promise(resolve => setTimeout(resolve, 5000));
         }
         const currentUserElement = await page.waitForSelector('div[id="current-user"]')
         const userName = await currentUserElement.evaluate(el => el.textContent)
