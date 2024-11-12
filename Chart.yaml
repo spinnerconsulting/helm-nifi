@@ -13,7 +13,7 @@ icon: https://svn.apache.org/repos/asf/nifi/site/trunk/images/niFi-logo-horizont
 source:
   - https://github.com/spinnerconsulting/helm-nifi
 maintainers:
-  - name: gforeman02
+  - name: Gregory M. Foreman
     email: gforeman@spinnerconsulting.com
     url: https://github.com/gforeman02
 dependencies:
