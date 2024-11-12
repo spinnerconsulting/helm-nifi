@@ -28,7 +28,6 @@ describe('NiFi Login via OIDC', () => {
             }
             catch(err) {
                 console.log("        Connection to "+process.env.NIFIURL+"failed: "+err.message+" ( try "+i.toString()+")")
-		await page.evaluate(() => new Promise(r => setTimeout(r, 5000)))
                 i++
             }
         }
@@ -59,8 +58,7 @@ describe('NiFi Login via OIDC', () => {
             await Promise.all([
                 page.reload(),
                 page.waitForNavigation(),
-                page.waitForNetworkIdle(),
-		page.evaluate(() => new Promise(r => setTimeout(r, 2000)))
+                page.waitForNetworkIdle()
             ])
             messageContentSelector = await page.waitForSelector('div[id="message-content"]')
             messageContent = await messageContentSelector.evaluate(el => el.textContent)
@@ -89,8 +87,7 @@ describe('NiFi Login via OIDC', () => {
             await Promise.all([
                 page.reload(),
                 page.waitForNavigation(),
-                page.waitForNetworkIdle(),
-		page.evaluate(() => new Promise(r => setTimeout(r, 2000)))
+                page.waitForNetworkIdle()
             ])
             try {
                 connectedNodesUserElement = await page.waitForSelector('span[id="connected-nodes-count"]', { timeout: 1000 })
