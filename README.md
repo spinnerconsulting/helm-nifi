@@ -1,12 +1,6 @@
 # Helm Chart for Apache NiFi
 
-[![CircleCI](https://circleci.com/gh/cetic/helm-nifi.svg?style=svg)](https://circleci.com/gh/cetic/helm-nifi/tree/master) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) ![version](https://img.shields.io/github/tag/cetic/helm-nifi.svg?label=release) ![test](https://github.com/cetic/helm-nifi/actions/workflows/test.yml/badge.svg)
-
-## $${\color{red}Maintainers \space Wanted}$$
-
-$${\color{red}This \space project \space is \space not \space maintained \space anymore.}$$
-
-If you are interested in maintaining a fork of this project, please chime in in the [dedicated issue](https://github.com/cetic/helm-nifi/issues/330).
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) ![test](https://github.com/spinnerconsulting/helm-nifi/actions/workflows/test.yml/badge.svg)
 
 ## Introduction
 
@@ -23,7 +17,7 @@ This [Helm](https://helm.sh/) chart installs [Apache NiFi](https://nifi.apache.o
 ### Add Helm repository
 
 ```bash
-helm repo add cetic https://cetic.github.io/helm-charts
+helm repo add spinner https://spinnerconsulting.github.io/helm-charts
 helm repo update
 ```
 
@@ -76,7 +70,7 @@ If you plan to use Grafana for the visualization of the metrics data [the follow
 Install the nifi helm chart with a release name `my-release`:
 
 ```bash
-helm install my-release cetic/nifi
+helm install my-release spinnerconsulting/nifi
 ```
 
 ### Install from local clone
@@ -192,7 +186,7 @@ The following table lists the configurable parameters of the nifi chart and the 
 | `ingress.enabled`                                                           | Enables Ingress                                                                                                    | `false`                         |
 | `ingress.className`      | Ingress controller Class                                                                                   | `nginx`                                  |
 | `ingress.annotations`                                                       | Ingress annotations                                                                                                | `{}`                            |
-| `ingress.path`                                                              | Path to access frontend (See issue [#22](https://github.com/cetic/helm-nifi/issues/22))                            | `/`                             |
+| `ingress.path`                                                              | Path to access frontend                            | `/`                             |
 | `ingress.hosts`                                                             | Ingress hosts                                                                                                      | `[]`                            |
 | `ingress.tls`                                                               | Ingress TLS configuration                                                                                          | `[]`                            |
 | **Persistence**                                                             |
@@ -287,7 +281,7 @@ The following table lists the configurable parameters of the nifi chart and the 
 
 ## Troubleshooting
 
-Before [filing a bug report](https://github.com/cetic/helm-nifi/issues/new/choose), you may want to:
+Before [filing a bug report](https://github.com/spinnerconsulting/helm-nifi/issues/new/choose), you may want to:
 
 * check the [FAQ](/doc/FAQ.md)
 * check that [persistent storage](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) is configured on your cluster
@@ -323,7 +317,7 @@ TLS work/inspiration from https://github.com/sushilkm/nifi-chart.git.
 
 ## Contributing
 
-Feel free to contribute by making a [pull request](https://github.com/cetic/helm-nifi/pull/new/master).
+Feel free to contribute by making a [pull request](https://github.com/spinnerconsulting/helm-nifi/pull/new/master).
 
 Please read the official [Helm Contribution Guide](https://github.com/helm/charts/blob/master/CONTRIBUTING.md) from Helm for more information on how you can contribute to this Chart.
 

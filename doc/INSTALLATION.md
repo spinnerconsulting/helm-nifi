@@ -7,7 +7,7 @@ Installation
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/cetic/helm-nifi.git
+git clone https://github.com/spinnerconsulting/helm-nifi.git
 cd helm-nifi
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo add dysnix https://dysnix.github.io/charts/
