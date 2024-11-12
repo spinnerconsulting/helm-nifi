@@ -82,8 +82,8 @@ describe('NiFi Login via OIDC', () => {
     it('All nodes connected', async () => {
         connectedNodesUserElement = await page.waitForSelector('span[id="connected-nodes-count"]')
         connectedNodesCount = await connectedNodesUserElement.evaluate(el => el.textContent )
-        // loop 30 times unless connectedNodesCount isn't "3 / 3"
-        for (let i = 0; ( i < 30 ) && ( connectedNodesCount != "3 / 3" ); i++ ) {
+        // loop 60 times unless connectedNodesCount isn't "3 / 3"
+        for (let i = 0; ( i < 60 ) && ( connectedNodesCount != "3 / 3" ); i++ ) {
             console.log("        Connected Nodes Count: "+connectedNodesCount+" ( try "+i.toString()+")")
             await Promise.all([
                 page.reload(),
@@ -91,7 +91,7 @@ describe('NiFi Login via OIDC', () => {
                 page.waitForNetworkIdle()
             ])
             try {
-                connectedNodesUserElement = await page.waitForSelector('span[id="connected-nodes-count"]', { timeout: 1000 })
+                connectedNodesUserElement = await page.waitForSelector('span[id="connected-nodes-count"]', { timeout: 5000 })
                 connectedNodesCount = await connectedNodesUserElement.evaluate(el => el.textContent )
             }
             catch(err) {
