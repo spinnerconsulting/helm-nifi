@@ -17,7 +17,7 @@ This [Helm](https://helm.sh/) chart installs [Apache NiFi](https://nifi.apache.o
 ### Add Helm repository
 
 ```bash
-helm repo add spinner https://spinnerconsulting.github.io/helm-charts
+helm repo add spinnerconsulting https://spinnerconsulting.github.io/helm-charts
 helm repo update
 ```
 
